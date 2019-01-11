@@ -8,7 +8,7 @@ python 3.7
 django 2.1.5
 
 to install it use 
-python manage.py makemigrations 
+python manage.py makemigrations &
 python manage.py migrate
 
 and runserver and go 
