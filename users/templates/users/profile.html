@@ -9,6 +9,7 @@
       <div class="media-body">
         <h2 class="account-heading">{{user.username}}</h2>
         <p class="text-secondary">{{user.email}}</p>
+        <p><a class="btn btn-outline-sucsess mb-4" href="{% url 'user_posts' user.username %}">See Your Posts</a></p>
       </div>
     </div>
   <!-- FORM HERE -->
@@ -24,4 +25,5 @@
     </div>
   </form>
   </div>
+
 {% endblock %}
