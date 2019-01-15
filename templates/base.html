@@ -20,7 +20,7 @@
 </head>
 <body>
     <header class="site-header">
-      <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+      <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
         <div class="container">
           <a class="navbar-brand mr-4" href="{% url 'home' %}">Django Blog</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
@@ -35,11 +35,12 @@
             <div class="navbar-nav">
               {% if user.is_authenticated %}
                 <a class="nav-item nav-link" href="{% url 'create' %}">New Post</a>
-                <a class="nav-item nav-link" href="{% url 'profile' %}">Profile</a>
-                <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
+                <a class="nav-item nav-link" href="{% url 'users:profile' %}">Profile</a>
+                <a class="nav-item nav-link" href="{% url 'users:change_password' %}">Change Password</a>
+                <a class="nav-item nav-link" href="{% url 'users:logout' %}">Logout</a>
               {% else %}
-                <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
-                <a class="nav-item nav-link" href="{% url 'register' %}">Register</a>
+                <a class="nav-item nav-link" href="{% url 'users:login' %}">Login</a>
+                <a class="nav-item nav-link" href="{% url 'users:register' %}">Register</a>
               {% endif %}
             </div>
           </div>
@@ -66,7 +67,7 @@
                 {% if user.is_authenticated %}
                   <a class="list-group-item list-group-item-light" href="{% url 'user_posts' user.username %}">See Your Posts</a>
                 {% else %}
-                  <a class="nav-item nav-link" href="{% url 'login' %}">Login to see yor Interesting</a>
+                  <a class="nav-item nav-link" href="{% url 'users:login' %}">Login to see yor Interesting</a>
                 {% endif %}
 
               </ul>
