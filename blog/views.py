@@ -4,6 +4,9 @@ from django.views.generic import ListView,DetailView,CreateView,UpdateView,Delet
 from django.contrib.auth.mixins import LoginRequiredMixin , UserPassesTestMixin
 from django.http import HttpResponse
 from .models import Post
+## Django Rest Framework ##
+from rest_framework import viewsets , permissions
+from .serializers import PostSerializer , UserSerializer
 
 # Create your views here.
 
@@ -71,3 +74,15 @@ class PostDeleteView(LoginRequiredMixin , UserPassesTestMixin , DeleteView):
 
 def about(request):
     return render(request, 'blog/about.html', {'title': 'About'})
+
+## Django Rest Framework
+
+class PostViewSet(viewsets.ModelViewSet):
+    queryset = Post.objects.all()
+    serializer_class = PostSerializer
+
+
+
+class UserViewSet(viewsets.ModelViewSet):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
