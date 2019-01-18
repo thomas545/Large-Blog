@@ -1,0 +1,11 @@
+Django==2.1.5
+django-bootstrap==0.2.4
+django-bootstrap4==0.0.7
+django-crispy-forms==1.7.2
+django-mysql==2.4.1
+djangorestframework==3.9.1
+djangorestframework-simplejwt==3.3
+Pillow==5.4.1
+psycopg2==2.7.6.1
+PyJWT==1.7.1
+pytz==2018.7
